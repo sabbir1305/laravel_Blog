@@ -48,13 +48,25 @@
 
 
 
-	<div class="form-group">
+	<div class="form-group col-md-5">
 		{!! Form::submit('Update User',['class' => 'btn btn-primary']) !!}
 	</div>
 
+
 	{!! Form::close() !!}
+
+	{{Form::open(['method'=>'DELETE','action'=>['AdminUsersController@destroy'
+		,$user->id] ])}}
+		<div class="form-group col-md-5 pull-right">
+			
+		
+			{!! Form::submit('Delete',['class' => 'btn btn-danger']) !!}
+			</div>
+		{{Form::close()}}
 	</div>
 		</div>
+
+		
 
 	<div class="row">
 			@include('includes.form_error')

@@ -1,6 +1,11 @@
 @extends('layouts.admin')
 
 @section('content')
+
+@if(Session::has('delete_user'))
+	<h3 class="text-success">{{session('delete_user')}}</h3>
+
+@endif
 <h1 class="text-center">Users</h1>
 <table class="table">
 	<thead>
